@@ -1,21 +1,23 @@
 package com.twu.refactoring;
 
 public class Rental {
-
     private Movie movie;
-
     private int daysRented;
 
-    public Rental(Movie movie, int daysRented) {
+    Rental(Movie movie, int daysRented) {
         this.movie = movie;
         this.daysRented = daysRented;
     }
 
-    public int getDaysRented() {
-        return daysRented;
+    double getCharge() {
+        return movie.getCharge(daysRented);
     }
 
-    public Movie getMovie() {
+    int getFrequentRenterPoints() {
+        return movie.getFrequentRenterPoints(daysRented);
+    }
+
+    Movie getMovie() {
         return movie;
     }
 }

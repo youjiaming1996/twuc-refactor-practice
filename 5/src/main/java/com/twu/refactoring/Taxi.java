@@ -22,4 +22,5 @@ public class Taxi {
     public boolean isPeakTime() {
         return peakTime;
     }
+
 }

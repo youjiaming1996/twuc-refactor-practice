@@ -7,51 +7,19 @@ public class Direction {
         this.direction = direction;
     }
 
-    public Direction turnRight() {
-        switch (direction) {
-            case 'N':
-                return new Direction('E');
-            case 'S':
-                return new Direction('W');
-            case 'E':
-                return new Direction('N');
-            case 'W':
-                return new Direction('S');
-            default:
-                throw new IllegalArgumentException();
-        }
-    }
+        @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
 
-    public Direction turnLeft() {
-        switch (direction) {
-            case 'N':
-                return new Direction('W');
-            case 'S':
-                return new Direction('E');
-            case 'E':
-                return new Direction('N');
-            case 'W':
-                return new Direction('S');
-            default:
-                throw new IllegalArgumentException();
-        }
-    }
+        Direction direction1 = (Direction) obj;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Direction direction1 = (Direction) o;
-
-        if (direction != direction1.direction) return false;
-
-        return true;
+        return direction == direction1.direction;
     }
 
     @Override
     public int hashCode() {
-        return (int) direction;
+        return direction;
     }
 
     @Override
